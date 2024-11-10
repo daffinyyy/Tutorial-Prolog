@@ -2,7 +2,6 @@
 - adicionar uma descrição
 - adicionar uma introdução
 
-<a name="ancora"></a>
 ## Sumário
 1. [O que é Prolog?](#ancora1)  
 Como fazer uma pesquisa de mercado
