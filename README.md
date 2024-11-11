@@ -5,6 +5,8 @@
 ## Sumário
 1. [O que é Prolog?](#ancora1)  
 2. [Instalação](#ancora2)
+- [Para Windows](#ancora2-1)
+- [Para Linux Ubuntu](#ancora2-2)
 3. [Programando em Prolog](#ancora3)
 <a id="ancora1"></a>
 ## O que é Prolog?  
@@ -29,8 +31,25 @@ Repare que X e Y funcionam como variáveis matemáticas na regra estabelecida. A
   
     
 <a id="ancora2"></a>
-## Instalação
+## Instalação  
+<a id="ancora2-1"></a>
+### Para Windows
+1. Acesse o link <https://www.swi-prolog.org/download/stable>  
+2. No bloco "Binaries" selecione a versão que melhor se adequa à sua máquina
+![opções de download]()  
+3. Selecione a caixa "I understand" e clique no link de download logo abaixo
+![link de download]()
+4. Após concluir o download, vá para o arquivo e execute-o para iniciar a instalação. É recomendado adicionar o ícone à tela inicial
+5. Não esqueça de reiniciar a máquina após concluir a instalação
+Se precisar de mais ajuda, tente verificar um [tutorial no YouTube](https://www.youtube.com/watch?v=vnGWJxl1Cbk)
 
+<a id="ancora2-2"></a>
+### Para Linux Ubuntu  
+1. Execute as seguintes linhas de código no seu terminal:  
+`% sudo apt-add-repository ppa:swi-prolog/stable`  
+`% sudo apt-get update`  
+`% sudo apt-get install swi-prolog`  
+  
 <a id="ancora3"></a>
 ## Programando em Prolog
 <a id="ancora4"></a>
