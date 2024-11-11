@@ -1,6 +1,7 @@
 # Tutorial de Prolog
 - adicionar uma descrição
 - adicionar uma introdução
+- refazer imagens
 
 ## Sumário
 1. [O que é Prolog?](#ancora1)  
