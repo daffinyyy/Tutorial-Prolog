@@ -36,7 +36,7 @@ Repare que X e Y funcionam como variáveis matemáticas na regra estabelecida. A
 ### Para Windows
 1. Acesse o link <https://www.swi-prolog.org/download/stable>  
 2. No bloco "Binaries" selecione a versão que melhor se adequa à sua máquina
-![opções de download]()  
+![opções de download](imagens/downloads.png)  
 3. Selecione a caixa "I understand" e clique no link de download logo abaixo
 ![link de download]()
 4. Após concluir o download, vá para o arquivo e execute-o para iniciar a instalação. É recomendado adicionar o ícone à tela inicial
