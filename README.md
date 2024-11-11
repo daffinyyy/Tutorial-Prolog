@@ -38,7 +38,7 @@ Repare que X e Y funcionam como variáveis matemáticas na regra estabelecida. A
 2. No bloco "Binaries" selecione a versão que melhor se adequa à sua máquina
 ![opções de download](imagens/downloads.png)  
 3. Selecione a caixa "I understand" e clique no link de download logo abaixo
-![link de download]()
+![link de download](imagens/confirma.png)
 4. Após concluir o download, vá para o arquivo e execute-o para iniciar a instalação. É recomendado adicionar o ícone à tela inicial
 5. Não esqueça de reiniciar a máquina após concluir a instalação
 Se precisar de mais ajuda, tente verificar um [tutorial no YouTube](https://www.youtube.com/watch?v=vnGWJxl1Cbk)
