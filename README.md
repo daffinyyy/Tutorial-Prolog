@@ -4,14 +4,20 @@
 - refazer imagens
 
 ## Sumário
-1. [O que é Prolog?](#ancora1)  
-2. [Instalação](#ancora2)
+1. [Introdução](#ancora0)
+2. [O que é Prolog?](#ancora1)  
+3. [Instalação](#ancora2)
 - [Para Windows](#ancora2-1)
 - [Para Linux Ubuntu](#ancora2-2)
 3. [Programando em Prolog](#ancora3)
   - [Fatos](#ancora3-1)
   - [Regras](#ancora3-2)
   - [Consultas](#ancora3-3)
+
+
+<a id="ancora0"></a>
+## Introdução
+falar sobre programação lógica
 
   
 <a id="ancora1"></a>
@@ -65,7 +71,7 @@ Se precisar de mais ajuda, tente verificar um [tutorial no YouTube](https://www.
 
 <a id="ancora3-1"></a>
 ### Fatos
-Como dito anteriormente, fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura *relação*(*itens que participam da relação*) e são precedidos por um ponto final:
+Como dito anteriormente, fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura *relação*(*itens que participam da relação*) e são delimitados por um ponto final:
 - pai(marcos, joão).  
 - nublado(hoje).
   
@@ -81,7 +87,7 @@ Sendo um condicional, as regras são compostas por um antecedente, que pode ser 
 | ;       | or (ou)      | disjunção    |
 | not     | not (não)    | negação      |  
   
-Em Prolog escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura *consequente* :- *expressão antecedente*
+Em Prolog escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura *consequente* :- *expressão antecedente*, delimitando novamente com um ponto final:
 - presa(X) :- come(Y,X), animal(X)
 Nesta regra, X é presa **se** Y come X **e** X é um animal. Ao escrever fatos e regras em prolog **use letras maiúsculas somente para representar variáveis**.
 
@@ -97,10 +103,10 @@ pai(leandro, andrea).
 filho(X, Y) :- pai(Y, X).
 neto(X, Z) :- pai(Z, Y), filho(X, Y).
 ```
-Podemos perguntar *?-neto(X, ricardo)* para saber quem são os netos de ricardo. O programa deve responder "maria" e "juliano", sempre seguindo a ordem em que foram escritos no banco de dados. Independente se estiver usando o site ou o aplicativo, o ?- já é adicionado automaticamente, então não é necessário escrevê-lo.  
+Podemos perguntar *?-neto(X, ricardo)* para saber quem são os netos de ricardo. O programa deve responder "maria" e "juliano", sempre seguindo a ordem em que foram escritos no banco de dados. Independente se estiver usando o site SWISH ou a interface SWI Prolog, o ?- já é adicionado automaticamente, então não é necessário escrevê-lo.  
   
 **Tente fazer os seguintes exercícios, utilizando o que aprendeu até agora**  
-1. Gersting^[1](), Problema prático 28
+1. Gersting<sup>[[1]](#ref_gersting)</sup>, Problema prático 28
 
 ### Referências
-[1]: Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações / Judith L. Gersting ; tradução Valéria de Magalhães Iorio. - 7. ed. - Rio de Janeiro : LTC, 2017.
+<a id="ref_gersting"></a> 1: Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações / Judith L. Gersting ; tradução Valéria de Magalhães Iorio. - 7. ed. - Rio de Janeiro : LTC, 2017.
