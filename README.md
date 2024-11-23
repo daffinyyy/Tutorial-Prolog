@@ -33,6 +33,7 @@ Repare que X e Y funcionam como variáveis matemáticas na regra estabelecida. A
     
 <a id="ancora2"></a>
 ## Instalação  
+Durante o tutorial usaremos o SWI Prolog, você pode usar a versão online [SWISH](https://swish.swi-prolog.org) ou seguir com a instlação da interface na sua máquina.
 <a id="ancora2-1"></a>
 ### Para Windows
 1. Acesse o link <https://www.swi-prolog.org/download/stable>  
@@ -54,4 +55,12 @@ Se precisar de mais ajuda, tente verificar um [tutorial no YouTube](https://www.
 <a id="ancora3"></a>
 ## Programando em Prolog
 <a id="ancora4"></a>
+### Fatos
+Como dito anteriormente, fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura *relação*(*itens que participam da relação*) e são precedidos por um ponto final:
+- Pai(Marcos, João).  
+- Nublado(hoje).  
+Note que Prolog não tem semântica intrínseca, logo, o significado dos fatos depende da interpretação do programador. A relação *Pai(Marcos, João)* poderia significar que Marcos é pai de João, João é pai de Marcos ou que Marcos e João são pais. Por isso, tente ser claro ao nomear as relações.
+### Regras 
+Sendo um condicional, as **regras** são compostas por um antecedente, que pode ser um termo simples ou uma conjunção, e caso este seja verdadeiro, gera um consequente, que é um termo simples. Em Prolog escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura *consequente* :- *expressão antecedente*:
+-
 <a id="ancora5"></a>
