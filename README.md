@@ -9,6 +9,11 @@
 - [Para Windows](#ancora2-1)
 - [Para Linux Ubuntu](#ancora2-2)
 3. [Programando em Prolog](#ancora3)
+  - [Fatos](#ancora3-1)
+  - [Regras](#ancora3-2)
+  - [Consultas](#ancora3-3)
+
+  
 <a id="ancora1"></a>
 ## O que é Prolog?  
 Criada em 1972 por Alain Colmerauer e Philippe Roussel, Prolog, abreviação de PROgramming LOGic, é uma linguagem de programação baseada nas noções matemáticas de relações e inferência lógica. Prolog é considerado uma **linguagem declarativa**, o que significa que, diferentemente de linguagens procedurais como Pyhton, que descrevem o passo a passo de como computar uma resposta, Prolog consiste numa base de dados de **fatos e regras** que descrevem as relações que moldam o programa, o usuário então pode fazer uma **consulta** e o programa responde com base no banco de dados.  
@@ -34,6 +39,7 @@ Repare que X e Y funcionam como variáveis matemáticas na regra estabelecida. A
 <a id="ancora2"></a>
 ## Instalação  
 Durante o tutorial usaremos o SWI Prolog, você pode usar a versão online [SWISH](https://swish.swi-prolog.org) ou seguir com a instlação da interface na sua máquina.
+
 <a id="ancora2-1"></a>
 ### Para Windows
 1. Acesse o link <https://www.swi-prolog.org/download/stable>  
@@ -48,19 +54,53 @@ Se precisar de mais ajuda, tente verificar um [tutorial no YouTube](https://www.
 <a id="ancora2-2"></a>
 ### Para Linux Ubuntu  
 1. Execute as seguintes linhas de código no seu terminal:  
-`% sudo apt-add-repository ppa:swi-prolog/stable`  
-`% sudo apt-get update`  
-`% sudo apt-get install swi-prolog`  
+```
+% sudo apt-add-repository ppa:swi-prolog/stable
+% sudo apt-get update
+% sudo apt-get install swi-prolog
+```
   
 <a id="ancora3"></a>
 ## Programando em Prolog
-<a id="ancora4"></a>
+
+<a id="ancora3-1"></a>
 ### Fatos
 Como dito anteriormente, fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura *relação*(*itens que participam da relação*) e são precedidos por um ponto final:
-- Pai(Marcos, João).  
-- Nublado(hoje).  
-Note que Prolog não tem semântica intrínseca, logo, o significado dos fatos depende da interpretação do programador. A relação *Pai(Marcos, João)* poderia significar que Marcos é pai de João, João é pai de Marcos ou que Marcos e João são pais. Por isso, tente ser claro ao nomear as relações.
-### Regras 
-Sendo um condicional, as **regras** são compostas por um antecedente, que pode ser um termo simples ou uma conjunção, e caso este seja verdadeiro, gera um consequente, que é um termo simples. Em Prolog escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura *consequente* :- *expressão antecedente*:
--
-<a id="ancora5"></a>
+- pai(marcos, joão).  
+- nublado(hoje).
+  
+Note que Prolog não tem semântica intrínseca, logo, o significado dos fatos depende da interpretação do programador. A relação *pai(marcos, joão)* poderia significar que Marcos é pai de João, João é pai de Marcos ou que Marcos e João são pais. Por isso, tente ser claro ao nomear as relações.
+
+<a id="ancora3-2"></a>
+### Regras  
+Sendo um condicional, as regras são compostas por um antecedente, que pode ser um termo simples ou uma conjunção, e caso este seja verdadeiro, gera um consequente, que é um termo simples. Para entender as regras em Prolog, é necessário saber também os operadores usados:  
+| SÍMBOLO |   CONECTIVO  | OPERAÇÃO LÓGICA |
+| :---:   |    :----:    |     :---:    |
+| :-      | if (se)      | implicação   |
+| ,       | and (e)      | conjunção    |
+| ;       | or (ou)      | disjunção    |
+| not     | not (não)    | negação      |  
+  
+Em Prolog escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura *consequente* :- *expressão antecedente*
+- presa(X) :- come(Y,X), animal(X)
+Nesta regra, X é presa **se** Y come X **e** X é um animal. Ao escrever fatos e regras em prolog **use letras maiúsculas somente para representar variáveis**.
+
+<a id="ancora3-3"></a>
+### Consultas
+A sintaxe das consultas em prolog é bem semelhante a dos fatos. Para fazer uma consulta em Prolog usamos ?- e escrevemos uma regra. O programa deve retornar todas os itens que atendem a esta regra:  
+Levando em consideração o seguinte banco de dados Prolog
+```
+pai(milton, maria).
+pai(milton, juliano).
+pai(ricardo, milton).
+pai(leandro, andrea).
+filho(X, Y) :- pai(Y, X).
+neto(X, Z) :- pai(Z, Y), filho(X, Y).
+```
+Podemos perguntar *?-neto(X, ricardo)* para saber quem são os netos de ricardo. O programa deve responder "maria" e "juliano", sempre seguindo a ordem em que foram escritos no banco de dados. Independente se estiver usando o site ou o aplicativo, o ?- já é adicionado automaticamente, então não é necessário escrevê-lo.  
+  
+**Tente fazer os seguintes exercícios, utilizando o que aprendeu até agora**  
+1. Gersting^[1](), Problema prático 28
+
+### Referências
+[1]: Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações / Judith L. Gersting ; tradução Valéria de Magalhães Iorio. - 7. ed. - Rio de Janeiro : LTC, 2017.
