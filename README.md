@@ -106,7 +106,57 @@ neto(X, Z) :- pai(Z, Y), filho(X, Y).
 Podemos perguntar *?-neto(X, ricardo)* para saber quem são os netos de ricardo. O programa deve responder "maria" e "juliano", sempre seguindo a ordem em que foram escritos no banco de dados. Independente se estiver usando o site SWISH ou a interface SWI Prolog, o ?- já é adicionado automaticamente, então não é necessário escrevê-lo.  
   
 **Tente fazer os seguintes exercícios, utilizando o que aprendeu até agora**  
-1. Gersting<sup>[[1]](#ref_gersting)</sup>, Problema prático 28
+1. Gersting<sup>[[1]](#ref_gersting)</sup>, Problema prático 28  
+   Dado o Banco de Dados:
+```
+come(urso, peixe).
+come(urso, raposa).
+come(veado, grama).
+animal(urso).
+animal(peixe).
+animal(raposa).
+animal(veado).
+planta(grama).
+```
+Diga qual vai ser a resposta do programa à consulta *?-come(X, Y), planta(Y)*  
 
+  
+2. Gersting<sup>[[1]](#ref_gersting)</sup>, Problema prático 29  
+   Dado o banco de dados:
+```
+come(urso, peixe).
+come(peixe, peixinho).
+come(peixinho, alga).
+come(guaxinim, peixe).
+come(urso, guaxinim).
+come(urso, raposa).
+come(raposa, coelho).
+come(coelho, grama).
+come(urso, veado).
+come(veado, grama).
+come(lince, veado).
+animal(urso).
+animal(peixe).
+animal(peixinho).
+animal(guaxinim).
+animal(raposa).
+animal(coelho).
+animal(veado).
+animal(lince).
+planta(grama).
+planta(alga).
+presa(X) :- come(Y, X), animal(X).
+```
+&nbsp;&nbsp;a) Formule uma regra de Prolog que define o predicado predador.  
+&nbsp;&nbsp;b) Adicione essa regra ao banco de dados e diga qual seria a resposta à consulta *?- predador(X)*.  
+
+  
+3. q3
+
+
+
+
+  
 ### Referências
-<a id="ref_gersting"></a> 1: Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações / Judith L. Gersting ; tradução Valéria de Magalhães Iorio. - 7. ed. - Rio de Janeiro : LTC, 2017.
+<a id="ref_gersting"></a> 1: GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações** - 7. ed. Rio de Janeiro: LTC, 2017.  
+<a id="ref_sebesta"></a> 2: SEBESTA, Robert W. **Conceitos de linguagens de programação** - 9. ed. Porto Alegre : Bookman, 2011.
