@@ -2,6 +2,7 @@
 - adicionar uma descrição
 - adicionar uma introdução
 - refazer imagens
+- falar sobre variáveis nas regras
 
 ## Sumário
 1. [Introdução](#ancora0)
@@ -71,7 +72,7 @@ Se precisar de mais ajuda, tente verificar um [tutorial no YouTube](https://www.
 
 <a id="ancora3-1"></a>
 ### Fatos
-Como dito anteriormente, fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura *relação*(*itens que participam da relação*) e são delimitados por um ponto final:
+Como dito anteriormente, fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura ***relação*(*itens que participam da relação*)** e são delimitados por um ponto final:
 - pai(marcos, joão).  
 - nublado(hoje).
   
@@ -87,7 +88,7 @@ Sendo um condicional, as regras são compostas por um antecedente, que pode ser 
 | ;       | or (ou)      | disjunção    |
 | not     | not (não)    | negação      |  
   
-Em Prolog escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura *consequente* :- *expressão antecedente*, delimitando novamente com um ponto final:
+Em Prolog escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente***, delimitando novamente com um ponto final:
 - presa(X) :- come(Y,X), animal(X)
 Nesta regra, X é presa **se** Y come X **e** X é um animal. Ao escrever fatos e regras em prolog **use letras maiúsculas somente para representar variáveis**.
 
