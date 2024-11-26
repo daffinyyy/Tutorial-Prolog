@@ -19,8 +19,8 @@
 
 <a id="ancora0"></a>
 ## Introdução
-falar sobre programação lógica
-
+&nbsp;&nbsp;Lógica simbólica trata-se de abstrações que representam as características formais da inferência lógica. Ela é dividida em dois ramos principais: a lógica proposicional e a lógica de predicados. A mesma pode atender às três principais funções da lógica formal: representar proposições, definir relações entre elas e explicar como novas proposições podem ser deduzidas a partir de outras assumidas como verdadeiras.
+&nbsp;&nbsp;A programação que utiliza lógica simbólica como linguagem é conhecida como **Programação Lógica**, enquanto as linguagens baseadas nesse tipo de lógica são chamadas de linguagens de programação lógica ou linguagens declarativas. A execução de um programa declarativo permite ao usuário fazer perguntas para buscar informações sobre conclusões deduzidas a partir de hipóteses. Ao receber a pergunta, o programa ativa sua "máquina de inferência" e aplica regras lógicas às hipóteses para identificar quais conclusões respondem à questão. Neste tutorial, vamos utilizar o Prolog como linguagem por ser a mais amplamente usada.
   
 <a id="ancora1"></a>
 ## O que é Prolog?  
@@ -107,6 +107,7 @@ Sendo um condicional, as regras são compostas por um antecedente, que pode ser 
   
 Em Prolog, escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente***, delimitando novamente com um ponto final:
 - presa(X) :- come(Y,X), animal(X)
+  
 Nesta regra, X é presa **se** Y come X **e** X é um animal. Ao escrever fatos e regras em Prolog, **use letras maiúsculas somente para representar variáveis**.
 
 <a id="ancora3-3"></a>
