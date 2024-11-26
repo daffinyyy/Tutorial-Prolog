@@ -19,12 +19,13 @@
 
 <a id="ancora0"></a>
 ## Introdução
-&nbsp;&nbsp;&nbsp;&nbsp;Lógica simbólica trata-se de abstrações que representam as características formais da inferência lógica. Ela é dividida em dois ramos principais: a lógica proposicional e a lógica de predicados. A mesma pode atender às três principais funções da lógica formal: representar proposições, definir relações entre elas e explicar como novas proposições podem ser deduzidas a partir de outras assumidas como verdadeiras.  
-&nbsp;&nbsp;&nbsp;&nbsp;A programação que utiliza lógica simbólica como linguagem é conhecida como **Programação Lógica**, enquanto as linguagens baseadas nesse tipo de lógica são chamadas de linguagens de programação lógica ou linguagens declarativas. A execução de um programa declarativo permite ao usuário fazer perguntas para buscar informações sobre conclusões deduzidas a partir de hipóteses. Ao receber a pergunta, o programa ativa sua "máquina de inferência" e aplica regras lógicas às hipóteses para identificar quais conclusões respondem à questão. Neste tutorial, vamos utilizar o Prolog como linguagem por ser a mais amplamente usada.
+Lógica simbólica trata-se de abstrações que representam as características formais da inferência lógica. Ela é dividida em dois ramos principais: a lógica proposicional e a lógica de predicados. A mesma pode atender às três principais funções da lógica formal: representar proposições, definir relações entre elas e explicar como novas proposições podem ser deduzidas a partir de outras assumidas como verdadeiras.  
+A programação que utiliza lógica simbólica como linguagem é conhecida como **Programação Lógica**, enquanto as linguagens baseadas nesse tipo de lógica são chamadas de linguagens de programação lógica ou linguagens declarativas. A execução de um programa declarativo permite ao usuário fazer perguntas para buscar informações sobre conclusões deduzidas a partir de hipóteses. Ao receber a pergunta, o programa ativa sua "máquina de inferência" e aplica regras lógicas às hipóteses para identificar quais conclusões respondem à questão. Neste tutorial, vamos utilizar o Prolog como linguagem por ser a mais amplamente usada.
   
 <a id="ancora1"></a>
 ## O que é Prolog?  
 Criada em 1972 por Alain Colmerauer e Philippe Roussel, Prolog, abreviação de PROgramming LOGic, é uma linguagem de programação baseada nas noções matemáticas de relações e inferência lógica. Prolog é considerado uma **linguagem declarativa**, o que significa que, diferentemente de linguagens procedurais como Pyhton, que descrevem o passo a passo de como computar uma resposta, Prolog consiste numa base de dados de **fatos e regras** que descrevem as relações que moldam o programa, o usuário então pode fazer uma **consulta** e o programa responde com base no banco de dados.  
+  
 Os **fatos** declaram relações ou caractertísticas para os itens de um conjunto universo.  
   
 - *"Hoje está ensolarado"* atribui a característica "ensolarado" para o item "hoje" de um conjunto de dias;  
@@ -89,7 +90,7 @@ swipl -s arquivoProlog.pl
 
 <a id="ancora3-1"></a>
 ### Fatos
-Como dito anteriormente, fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura ***relação*(*itens que participam da relação*)** e são delimitados por um ponto final:
+Fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura ***relação*(*itens que participam da relação*)** e são delimitados por um ponto final, tais como em:
 - pai(marcos, joão).  
 - nublado(hoje).
   
