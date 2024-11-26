@@ -77,6 +77,12 @@ Se precisar de mais ajuda, tente verificar um [tutorial no YouTube](https://www.
 % sudo apt-get update
 % sudo apt-get install swi-prolog
 ```
+2. Crie um arquivo .pl e edite o arquivo com o editor de texto de sua preferência, escrevendo os fatos e regras.
+3. Volte para o terminal e escreva a seguinte linha, usando o nome do seu arquivo:
+```
+swipl -s arquivoProlog.pl
+```
+4. Escreva suas consultas no terminal.
   
 <a id="ancora3"></a>
 ## Programando em Prolog
