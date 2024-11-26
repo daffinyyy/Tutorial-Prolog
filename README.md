@@ -8,8 +8,9 @@
 1. [Introdução](#ancora0)
 2. [O que é Prolog?](#ancora1)  
 3. [Instalação](#ancora2)
-- [Para Windows](#ancora2-1)
-- [Para Linux Ubuntu](#ancora2-2)
+- [Online](#ancora2_1)
+- [Para Windows](#ancora2-2)
+- [Para Linux Ubuntu](#ancora2-3)
 3. [Programando em Prolog](#ancora3)
   - [Fatos](#ancora3-1)
   - [Regras](#ancora3-2)
@@ -45,9 +46,19 @@ Repare que X e Y funcionam como variáveis matemáticas na regra estabelecida. A
     
 <a id="ancora2"></a>
 ## Instalação  
-Durante o tutorial usaremos o SWI Prolog, você pode usar a versão online [SWISH](https://swish.swi-prolog.org) ou seguir com a instlação da interface na sua máquina.
 
-<a id="ancora2-1"></a>
+<a id="ancora2-2"></a>
+### Online
+Caso não queira instalar o ambiente do SWI Prolog, o mesmo possui uma versão online, o [SWISH](https://swish.swi-prolog.org). Ao acessar o link, você encontrará a seguinte tela:  
+
+1. Clique no botão azul "Program" para criar um novo banco de dados Prolog.  
+2. Escreva os fatos e regras do lado esquerdo. Para fazer consultas, utilize o terminal localizado no canto inferior direito.
+  
+3. Para executar, clique no botão azul "Run!".
+4. Se sua consulta possui vários resultados, clique em "Next". O terminal não oferecerá essa opção uma vez que todos os resultados possíveis forem exibidos.
+
+
+<a id="ancora2-2"></a>
 ### Para Windows
 1. Acesse o link <https://www.swi-prolog.org/download/stable>  
 2. No bloco "Binaries" selecione a versão que melhor se adequa à sua máquina
@@ -58,7 +69,7 @@ Durante o tutorial usaremos o SWI Prolog, você pode usar a versão online [SWIS
 5. Não esqueça de reiniciar a máquina após concluir a instalação
 Se precisar de mais ajuda, tente verificar um [tutorial no YouTube](https://www.youtube.com/watch?v=vnGWJxl1Cbk)
 
-<a id="ancora2-2"></a>
+<a id="ancora2-3"></a>
 ### Para Linux Ubuntu  
 1. Execute as seguintes linhas de código no seu terminal:  
 ```
@@ -88,13 +99,13 @@ Sendo um condicional, as regras são compostas por um antecedente, que pode ser 
 | ;       | or (ou)      | disjunção    |
 | not     | not (não)    | negação      |  
   
-Em Prolog escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente***, delimitando novamente com um ponto final:
+Em Prolog, escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente***, delimitando novamente com um ponto final:
 - presa(X) :- come(Y,X), animal(X)
-Nesta regra, X é presa **se** Y come X **e** X é um animal. Ao escrever fatos e regras em prolog **use letras maiúsculas somente para representar variáveis**.
+Nesta regra, X é presa **se** Y come X **e** X é um animal. Ao escrever fatos e regras em Prolog, **use letras maiúsculas somente para representar variáveis**.
 
 <a id="ancora3-3"></a>
 ### Consultas
-A sintaxe das consultas em prolog é bem semelhante a dos fatos. Para fazer uma consulta em Prolog usamos ?- e escrevemos uma regra. O programa deve retornar todas os itens que atendem a esta regra:  
+A sintaxe das consultas em Prolog é bem semelhante a dos fatos. Para fazer uma consulta em Prolog, usamos ?- e escrevemos uma regra. O programa deve retornar todas os itens que atendem a esta regra:  
 Levando em consideração o seguinte banco de dados Prolog
 ```
 pai(milton, maria).
