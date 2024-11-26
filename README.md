@@ -50,13 +50,13 @@ Repare que X e Y funcionam como variáveis matemáticas na regra estabelecida. A
 <a id="ancora2-2"></a>
 ### Online
 Caso não queira instalar o ambiente do SWI Prolog, o mesmo possui uma versão online, o [SWISH](https://swish.swi-prolog.org). Ao acessar o link, você encontrará a seguinte tela:  
-
+![tela inicial swish](imagens/tela_swish.png)
 1. Clique no botão azul "Program" para criar um novo banco de dados Prolog.  
 2. Escreva os fatos e regras do lado esquerdo. Para fazer consultas, utilize o terminal localizado no canto inferior direito.
-  
+![tela de edição](imagens/tela_edicao.png)
 3. Para executar, clique no botão azul "Run!".
 4. Se sua consulta possui vários resultados, clique em "Next". O terminal não oferecerá essa opção uma vez que todos os resultados possíveis forem exibidos.
-
+![terminal swish](imagens/terminal.png)
 
 <a id="ancora2-2"></a>
 ### Para Windows
