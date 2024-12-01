@@ -27,7 +27,7 @@ A programação que utiliza lógica simbólica como linguagem é conhecida como 
 ## O que é Prolog?  
 Criada em 1972 por Alain Colmerauer e Philippe Roussel, Prolog, abreviação de PROgramming LOGic, é uma linguagem de programação baseada nas noções matemáticas de relações e inferência lógica. Prolog é considerado uma **linguagem declarativa**, o que significa que, diferentemente de linguagens procedurais como Pyhton, que descrevem o passo a passo de como computar uma resposta, Prolog consiste numa base de dados de **fatos e regras** que descrevem as relações que moldam o programa, o usuário então pode fazer uma **consulta** e o programa responde com base no banco de dados.  
   
-Os **fatos** declaram relações ou caractertísticas para os itens de um conjunto universo.  
+Os **fatos** declaram relações ou caractertísticas para os itens de um conjunto universo. 
   
 - *"Hoje está ensolarado"* atribui a característica "ensolarado" para o item "hoje" de um conjunto de dias;  
 - *"João e Ana são irmãos"*  estabelece a relação "irmãos" aos itens "João" e "Ana" de um conjunto de pessoas
@@ -107,14 +107,14 @@ Sendo um condicional, as regras são compostas por um antecedente, que pode ser 
 | ;       | or (ou)      | disjunção    |
 | not     | not (não)    | negação      |  
   
-Em Prolog, escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente***, delimitando novamente com um ponto final:
-- presa(X) :- come(Y,X), animal(X)
+Em Prolog, escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente***, delimitando novamente com um ponto final, como em:
+- presa(X) :- come(Y,X), animal(X).
   
 Nesta regra, X é presa **se** Y come X **e** X é um animal. Ao escrever fatos e regras em Prolog, **use letras maiúsculas somente para representar variáveis**.
 
 <a id="ancora3-3"></a>
 ### Consultas
-A sintaxe das consultas em Prolog é bem semelhante a dos fatos. Para fazer uma consulta em Prolog, usamos ?- e escrevemos uma regra. O programa deve retornar todas os itens que atendem a esta regra:  
+A sintaxe das consultas em Prolog é bem semelhante a dos fatos. Para fazer uma consulta em Prolog, usamos ?- e escrevemos uma regra. O programa deve retornar todas os itens que atendem a esta regra. Observe o seguinte exemplo:  
 Levando em consideração o seguinte banco de dados Prolog
 ```
 pai(milton, maria).
