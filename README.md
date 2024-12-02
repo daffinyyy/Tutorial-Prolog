@@ -1,6 +1,9 @@
 # Tutorial de Prolog
-- Explicar resolução do prolog?
-- Horn antes dos fatos e regras
+- Explicar método de resolução do prolog?
+- Horn antes dos fatos e regras, três tipos de cláusulas de horn
+- Não existe quantificadores em prolog
+- Negação de quantificadores pode ser demonstrada pela resolução
+- Tradução dos predicados em cláusulas pode demonstar o uso de generalização e especialização
 
 ## Sumário
 1. [Introdução](#ancora0)
