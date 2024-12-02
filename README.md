@@ -1,8 +1,6 @@
 # Tutorial de Prolog
-- adicionar uma descrição
-- adicionar uma introdução
-- refazer imagens
-- falar sobre variáveis nas regras
+- Explicar resolução do prolog?
+- Horn antes dos fatos e regras
 
 ## Sumário
 1. [Introdução](#ancora0)
@@ -21,11 +19,11 @@
 ## Introdução
 Lógica simbólica trata-se de abstrações que representam as características formais da inferência lógica. Ela é dividida em dois ramos principais: a lógica proposicional e a lógica de predicados. A mesma pode atender às três principais funções da lógica formal: representar proposições, definir relações entre elas e explicar como novas proposições podem ser deduzidas a partir de outras assumidas como verdadeiras.  
   
-A programação que utiliza lógica simbólica como linguagem é conhecida como **Programação Lógica**, enquanto as linguagens baseadas nesse tipo de lógica são chamadas de linguagens de programação lógica ou linguagens declarativas. A execução de um programa declarativo permite ao usuário fazer perguntas para buscar informações sobre conclusões deduzidas a partir de hipóteses. Ao receber a pergunta, o programa ativa sua "máquina de inferência" e aplica regras lógicas às hipóteses para identificar quais conclusões respondem à questão. Neste tutorial, vamos utilizar o Prolog como linguagem por ser a mais amplamente usada.
+A programação que utiliza lógica simbólica como linguagem é conhecida como **Programação Lógica**, enquanto as linguagens baseadas nesse tipo de lógica são chamadas de linguagens de programação lógica ou linguagens declarativas. A execução de um programa declarativo permite ao usuário fazer perguntas para buscar informações sobre conclusões deduzidas a partir de hipóteses. Ao receber a pergunta, o sitema ativa sua "máquina de inferência" e aplica regras lógicas às hipóteses para identificar quais conclusões respondem à questão. Neste tutorial, vamos utilizar o Prolog como linguagem por ser a mais amplamente usada.
   
 <a id="ancora1"></a>
 ## O que é Prolog?  
-Criada em 1972 por Alain Colmerauer e Philippe Roussel, Prolog, abreviação de PROgramming LOGic, é uma linguagem de programação baseada nas noções matemáticas de relações e inferência lógica. Prolog é considerado uma **linguagem declarativa**, o que significa que, diferentemente de linguagens procedurais como Pyhton, que descrevem o passo a passo de como computar uma resposta, Prolog consiste numa base de dados de **fatos e regras** que descrevem as relações que moldam o programa, o usuário então pode fazer uma **consulta** e o programa responde com base no banco de dados.  
+Criada em 1972 por Alain Colmerauer e Philippe Roussel, Prolog, abreviação de PROgramming LOGic, é uma linguagem de programação baseada nas noções matemáticas de relações e inferência lógica. Prolog é considerado uma **linguagem declarativa**, o que significa que, diferentemente de linguagens procedurais como Pyhton, que descrevem o passo a passo de como computar uma resposta, Prolog consiste numa base de dados de **fatos e regras** que descrevem as relações que moldam o sistema, o usuário então pode fazer uma **consulta** e o sistema responde com base no banco de dados. As sentenças em Prolog são formadas a partir de termos. Um **termo** Prolog é uma constante, uma variável ou uma estrutura. Uma constante é um átomo ou um inteiro. Átomos são os valores simbólicos de Prolog. E por fim, uma variável é qualquer cadeia de letras, dígitos e sublinhados que iniciam com uma letra maiúscula (SEBESTA<sup>[[2]](#ref_sebesta)</sup>, 2011), por isso, é importante se atentar para escrever os fatos e regras em letras minúsculas, do contrário, serão interpretados como variáveis.
   
 Os **fatos** declaram relações ou caractertísticas para os itens de um conjunto universo. 
   
@@ -41,15 +39,13 @@ Por último, as **consultas** são o meio de solicitar informações de um banco
 - *"Marcos é pai de Lucas"* (fato)  
 - *"X é filho de Y se Y é pai de X"* (regra)  
 - *"Quem é filho de Marcos?"* (consulta)
-
-Repare que X e Y funcionam como variáveis matemáticas na regra estabelecida. As variáveis serão melhor abordadas durante a seção (INSIRA SEÇÃO AQUI).
   
   
     
 <a id="ancora2"></a>
 ## Instalação  
 
-<a id="ancora2-2"></a>
+<a id="ancora2-1"></a>
 ### Online
 Caso não queira instalar o ambiente do SWI Prolog, o mesmo possui uma versão online, o [SWISH](https://swish.swi-prolog.org). Ao acessar o link, você encontrará a seguinte tela:  
 ![tela inicial swish](imagens/tela_swish.png)
@@ -89,9 +85,16 @@ swipl -s arquivoProlog.pl
 <a id="ancora3"></a>
 ## Programando em Prolog
 
+### Cláusula de Horn
+Para visualizar melhor a Lógica de Predicado com Prolog, é necessário entender as Cláusulas de Horn, que consistem em uma série de negações de predicados unidas por disjunção, onde no máximo um predicado não é negado, tal como em:
+- ¬A<sub>1</sub> ∨ ¬A<sub>2</sub> ∨ ¬A<sub>3</sub> ∨ X  
+Observe que é possível aplicar a regras de equivalência e inferência de tal forma, que:
+- ¬(¬A<sub>1</sub> ∨ ¬A<sub>2</sub> ∨ ¬A<sub>3</sub>) → X *(Condicional)*
+- A<sub>1</sub> ∧ A<sub>2</sub> ∧ A<sub>3</sub> → X *(De Morgan)*
+
 <a id="ancora3-1"></a>
 ### Fatos
-Fatos são proposições consideradas verdadeiras. Em Prolog elas seguem a estrutura ***relação*(*itens que participam da relação*)** e são delimitados por um ponto final, tais como em:
+Fatos são proposições verdadeiras na linguagem da Lógica Matemática. Em Prolog elas seguem a estrutura ***relação*(*itens que participam da relação*)** e são delimitados por um ponto final, tais como em:
 - pai(marcos, joão).  
 - nublado(hoje).
   
@@ -105,16 +108,16 @@ Sendo um condicional, as regras são compostas por um antecedente, que pode ser 
 | :-      | if (se)      | implicação   |
 | ,       | and (e)      | conjunção    |
 | ;       | or (ou)      | disjunção    |
-| not     | not (não)    | negação      |  
+| \+      | not (não)    | negação      |  
   
-Em Prolog, escrevemos o consequente primeiro e atribuímos uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente***, delimitando novamente com um ponto final, como em:
+Em Prolog, o consequente é escrito primeiro e, em seguida, é atribuida uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente.***, como em:
 - presa(X) :- come(Y,X), animal(X).
   
-Nesta regra, X é presa **se** Y come X **e** X é um animal. Ao escrever fatos e regras em Prolog, **use letras maiúsculas somente para representar variáveis**.
+Nesta regra, X é presa **se** Y come X **e** X é um animal.  
 
 <a id="ancora3-3"></a>
 ### Consultas
-A sintaxe das consultas em Prolog é bem semelhante a dos fatos. Para fazer uma consulta em Prolog, usamos ?- e escrevemos uma regra. O programa deve retornar todas os itens que atendem a esta regra. Observe o seguinte exemplo:  
+A sintaxe das consultas em Prolog é bem semelhante a dos fatos. Para fazer uma consulta em Prolog, usa-se ?- e escreve-se uma regra. O sistema deve retornar todas os itens que atendem a esta regra. Observe o seguinte exemplo:  
 Levando em consideração o seguinte banco de dados Prolog
 ```
 pai(milton, maria).
@@ -124,7 +127,7 @@ pai(leandro, andrea).
 filho(X, Y) :- pai(Y, X).
 neto(X, Z) :- pai(Z, Y), filho(X, Y).
 ```
-Podemos perguntar *?-neto(X, ricardo)* para saber quem são os netos de ricardo. O programa deve responder "maria" e "juliano", sempre seguindo a ordem em que foram escritos no banco de dados. Independente se estiver usando o site SWISH ou a interface SWI Prolog, o ?- já é adicionado automaticamente, então não é necessário escrevê-lo.  
+A consulta *?-neto(X, ricardo)* representa quem são os netos de ricardo. O sistema deve responder "maria" e "juliano", sempre seguindo a ordem em que foram escritos no banco de dados. Independente se estiver usando o site SWISH ou a interface SWI Prolog, o ?- já é adicionado automaticamente, então não é necessário escrevê-lo.  
   
 **Tente fazer os seguintes exercícios, utilizando o que aprendeu até agora**  
 1. Gersting<sup>[[1]](#ref_gersting)</sup>, Problema prático 28  
@@ -139,7 +142,7 @@ animal(raposa).
 animal(veado).
 planta(grama).
 ```
-Diga qual vai ser a resposta do programa à consulta *?-come(X, Y), planta(Y)*  
+Diga qual vai ser a resposta do sistema à consulta *?-come(X, Y), planta(Y)*  
 
   
 2. Gersting<sup>[[1]](#ref_gersting)</sup>, Problema prático 29  
@@ -170,9 +173,6 @@ presa(X) :- come(Y, X), animal(X).
 ```
 &nbsp;&nbsp;a) Formule uma regra de Prolog que define o predicado predador.  
 &nbsp;&nbsp;b) Adicione essa regra ao banco de dados e diga qual seria a resposta à consulta *?- predador(X)*.  
-
-  
-3. q3
 
 
 
