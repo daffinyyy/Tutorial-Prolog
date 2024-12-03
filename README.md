@@ -9,7 +9,7 @@
 1. [Introdução](#ancora0)
 2. [O que é Prolog?](#ancora1)  
 3. [Instalação](#ancora2)
-- [Online](#ancora2_1)
+- [Online](#ancora2-1)
 - [Para Windows](#ancora2-2)
 - [Para Linux Ubuntu](#ancora2-3)
 3. [Programando em Prolog](#ancora3)
