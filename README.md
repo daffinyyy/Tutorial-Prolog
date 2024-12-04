@@ -20,13 +20,17 @@
 
 <a id="ancora0"></a>
 ## Introdução
-Lógica simbólica trata-se de abstrações que representam as características formais da inferência lógica. Ela é dividida em dois ramos principais: a lógica proposicional e a lógica de predicados. A mesma pode atender às três principais funções da lógica formal: representar proposições, definir relações entre elas e explicar como novas proposições podem ser deduzidas a partir de outras assumidas como verdadeiras.  
+Uma das grandes dificuldades enfrentada por alunos durante a disciplina de Matemática Discreta é a compreensão da Lógica de Predicados. Conceitos como quantificadores e criação de sentenças podem ser difíceis de visualizar, tornando o cálculo de predicados uma tarefa dificultosa. Nesse contexto, a Programação Lógica pode servir de auxílio ao estudante.  
   
-A programação que utiliza lógica simbólica como linguagem é conhecida como **Programação Lógica**, enquanto as linguagens baseadas nesse tipo de lógica são chamadas de linguagens de programação lógica ou linguagens declarativas. A execução de um programa declarativo permite ao usuário fazer perguntas para buscar informações sobre conclusões deduzidas a partir de hipóteses. Ao receber a pergunta, o sitema ativa sua "máquina de inferência" e aplica regras lógicas às hipóteses para identificar quais conclusões respondem à questão. Neste tutorial, vamos utilizar o Prolog como linguagem por ser a mais amplamente usada.
+A Programação Lógica segue o paradigma declarativo, onde o foco está em descrever objetivos sem especificar ao sistema como alcançá-los. O programador define regras, relações ou propriedades, e o sistema cuida da execução. A Programação Lógica tem como finalidade principal resolver problemas através da aplicação de regras lógicas e dedução automática e é usada principalmente na área da Inteligência Artificial, como o Processamento de Linguagem Natural e Bancos de Dados Inteligentes.  
+  
+Atualmente, Prolog é a linguagem mais amplamente usada para escrever o Programção Lógica, portanto, essa será durante esse turorial.  
   
 <a id="ancora1"></a>
 ## O que é Prolog?  
-Criada em 1972 por Alain Colmerauer e Philippe Roussel, Prolog, abreviação de PROgramming LOGic, é uma linguagem de programação baseada nas noções matemáticas de relações e inferência lógica. Prolog é considerado uma **linguagem declarativa**, o que significa que, diferentemente de linguagens procedurais como Pyhton, que descrevem o passo a passo de como computar uma resposta, Prolog consiste numa base de dados de **fatos e regras** que descrevem as relações que moldam o sistema, o usuário então pode fazer uma **consulta** e o sistema responde com base no banco de dados. As sentenças em Prolog são formadas a partir de termos. Um **termo** Prolog é uma constante, uma variável ou uma estrutura. Uma constante é um átomo ou um inteiro. Átomos são os valores simbólicos de Prolog. E por fim, uma variável é qualquer cadeia de letras, dígitos e sublinhados que iniciam com uma letra maiúscula (SEBESTA<sup>[[2]](#ref_sebesta)</sup>, 2011), por isso, é importante se atentar para escrever os fatos e regras em letras minúsculas, do contrário, serão interpretados como variáveis.
+Criada em 1972 por Alain Colmerauer e Philippe Roussel, Prolog, abreviação de PROgramming LOGic, é uma linguagem de programação baseada nas noções matemáticas de relações e inferência lógica. Prolog é considerado uma **linguagem declarativa**, o que significa que, diferentemente de linguagens procedurais como Pyhton, que descrevem o passo a passo de como computar uma resposta, Prolog consiste numa base de dados de **fatos e regras** que descrevem as relações que moldam o sistema, o usuário então pode fazer uma **consulta** e o sistema responde com base no banco de dados. As sentenças em Prolog são formadas a partir de termos.  
+  
+Um **termo** Prolog pode ser uma constante, uma variável ou uma estrutura. Uma constante é um átomo ou um inteiro, onde átomos são os valores simbólicos de Prolog, como *sol, 'casa branca',* ou *true*, e inteiros são os números do conjunto dos inteiros. Uma variável é qualquer cadeia de letras, dígitos e sublinhados que iniciam com uma letra maiúscula, por isso, é importante se atentar para escrever os fatos e regras em letras minúsculas, do contrário, serão interpretados como variáveis. E por fim, uma estrutura é composta por um functor e seus argumentos, como em *pessoa(maria, 21, engenheira)*, onde "pessoa" é o functor e "maria, 21, engenheira" são os argumentos.
   
 Os **fatos** declaram relações ou caractertísticas para os itens de um conjunto universo. 
   
@@ -87,13 +91,6 @@ swipl -s arquivoProlog.pl
   
 <a id="ancora3"></a>
 ## Programando em Prolog
-
-### Cláusula de Horn
-Para visualizar melhor a Lógica de Predicado com Prolog, é necessário entender as Cláusulas de Horn, que consistem em uma série de negações de predicados unidas por disjunção, onde no máximo um predicado não é negado, tal como em:
-- ¬A<sub>1</sub> ∨ ¬A<sub>2</sub> ∨ ¬A<sub>3</sub> ∨ X  
-Observe que é possível aplicar a regras de equivalência e inferência de tal forma, que:
-- ¬(¬A<sub>1</sub> ∨ ¬A<sub>2</sub> ∨ ¬A<sub>3</sub>) → X *(Condicional)*
-- A<sub>1</sub> ∧ A<sub>2</sub> ∧ A<sub>3</sub> → X *(De Morgan)*
 
 <a id="ancora3-1"></a>
 ### Fatos
@@ -177,7 +174,8 @@ presa(X) :- come(Y, X), animal(X).
 &nbsp;&nbsp;a) Formule uma regra de Prolog que define o predicado predador.  
 &nbsp;&nbsp;b) Adicione essa regra ao banco de dados e diga qual seria a resposta à consulta *?- predador(X)*.  
 
-
+### Sentenças
+Agora que há uma base da sintaxe de Prolog, esta seção irá se aprofundar na utilização da linguagem para compreensão da lógica de predicados. 
 
 
   
