@@ -17,8 +17,8 @@
   - [Regras](#ancora3-2)
   - [Consultas](#ancora3-3)
   - [Quantificadores e Predicados](#ancora3-4)
+  - [Negação de quantificadores](#ancora3-5)
   - [Generalização e Especialização]()
-  - [Negação de quantificadores]()
 
 
 
@@ -255,8 +255,17 @@ Você pode alterar o banco de dados acima e adicionar mais animais, característ
 
   
 <a id="ancora3-5"></a>
+### Negação de Quantificadores
+As regras de inferência e equivalência da lógica proposicional ainda valem para a lógica de predicados, com a adição de Generalização e Especialização, vistos na próxima seção, e uma pequena mudança na negação. A negação de quantificadores funciona diferente da negação de variáveis, veja, a regra afirma que:
+- ¬∀ é equivalente a ∃¬
+- ¬∃ é equivalente a ∀¬  
+Você pode tentar ver da seguinte maneira:
+- Se **nem todo mundo**(¬∀) vai à festa, então **existe alguém que não** vai (∃¬).
+- Se **não existe alguém**(¬∃) que vá à festa, então **todo mundo não** vai (∀¬).
+
+
 ### Generalização e Especialização
-Prolog não possui sintaxe para representar quantificadores. Ainda assim, é possível
+Prolog não tem uma representação para quantificadores, os mesmos estão implícitos na linguagem. Como você viu nos exemplos da seção [Quantificadores e Predicados](#ancora3-4), toda consulta de Prolog usa, implicitamente, o quantificador ∃ para perguntar se determinada regra é válida. Da mesma forma, todas as variáveis são, implicitamente, quantificadas universalmente. Mas então, como traduzir predicados quantificados para sentenças em Prolog, sem perder o valor lógico? Isso é possível utilizando as regras de 
   
 ### Referências
 <a id="ref_gersting"></a> 1: GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações** - 7. ed. Rio de Janeiro: LTC, 2017.  
