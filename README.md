@@ -174,10 +174,35 @@ presa(X) :- come(Y, X), animal(X).
 &nbsp;&nbsp;a) Formule uma regra de Prolog que define o predicado predador.  
 &nbsp;&nbsp;b) Adicione essa regra ao banco de dados e diga qual seria a resposta à consulta *?- predador(X)*.  
 
-### Sentenças
-Agora que há uma base da sintaxe de Prolog, esta seção irá se aprofundar na utilização da linguagem para compreensão da lógica de predicados. 
+### Quantificadores e Predicados
+Agora que há uma base da sintaxe de Prolog, esta seção irá se aprofundar na utilização da linguagem para compreensão da lógica de predicados.  
+  
+A lógica de predicados possui apenas dois quantificadores, ∀(leia "Para todo") e ∃(leia "Existe"). O ∀ é um quantificador universal, logo, se aplica a todos os itens de um conjunto universo. No exemplo:
 
+> U (Conjunto Universo): Flores  
+> P(x): x é uma planta  
+>  
+> (∀x)P(x)
 
+Sabemos que todos os elementos do Conjunto Universo são flores, e que o predicado P(x) significa que x é uma planta, logo, (∀x)P(x) significa *"**Para todo** x (pertencente conjunto universo), x é uma planta"*. Veja em Prolog:
+```
+flor(rosa).
+flor(margarida).
+flor(lirio).
+flor(tulipa).
+flor(girassol).
+
+planta(X) :- flor(X).
+```
+Foi definido uma série de flores para representar o conjunto universo e uma regra para o predicado "planta". Repare que *planta(X) :- flor(X).* possui o mesmo significado lógico de *(∀x)P(x)*, pois para todo X que é uma flor, X é uma planta. Ao rodar o código com a consulta *?- planta(x)*, obtemos:
+```
+X = rosa
+X = margarida
+X = lirio
+X = tulipa
+X = girassol
+```
+Exatamente todos os elementos do nosso conjunto universo.
   
 ### Referências
 <a id="ref_gersting"></a> 1: GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações** - 7. ed. Rio de Janeiro: LTC, 2017.  
