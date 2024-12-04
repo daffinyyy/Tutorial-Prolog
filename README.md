@@ -210,7 +210,8 @@ X = girassol
 ```
 Exatamente todos os elementos do nosso conjunto universo.  
 
-O quantificador ∃ é existencial, se aplicando há *alguns* elementos do conjunto universo. O mesmo pode ser lido como “existe”, “há pelo menos um”, “existe algum” ou “para algum”, use o que for mais conveniente para você. O quantificador existencial implica que não se sabe a quantidade exata, mas que **existe pelo menos um** elemento que se encaixa na relação. Observe o exemplo:  
+O quantificador ∃ é existencial, se aplicando há *alguns* elementos do conjunto universo. O mesmo pode ser lido como “existe”, “há pelo menos um”, “existe algum” ou “para algum”, use o que for mais conveniente para você. O quantificador existencial implica que não se sabe a quantidade exata, mas que **existe pelo menos um** elemento que se encaixa na relação. Observe o exemplo: 
+<a id="ancora_exemplo-animais"></a>
 
 > U (conjunto Universo): Animais  
 > F(x): x é um felino  
@@ -256,12 +257,29 @@ Você pode alterar o banco de dados acima e adicionar mais animais, característ
   
 <a id="ancora3-5"></a>
 ### Negação de Quantificadores
-As regras de inferência e equivalência da lógica proposicional ainda valem para a lógica de predicados, com a adição de Generalização e Especialização, vistos na próxima seção, e uma pequena mudança na negação. A negação de quantificadores funciona diferente da negação de variáveis, veja, a regra afirma que:
+As regras de dedução da lógica proposicional ainda valem para a lógica de predicados, com a adição de Generalização e Especialização, vistos na próxima seção, e uma pequena mudança na negação. A negação de quantificadores funciona diferente da negação de variáveis, veja, a regra afirma que:
+
 - ¬∀ é equivalente a ∃¬
 - ¬∃ é equivalente a ∀¬  
+  
 Você pode tentar ver da seguinte maneira:
+
 - Se **nem todo mundo**(¬∀) vai à festa, então **existe alguém que não** vai (∃¬).
-- Se **não existe alguém**(¬∃) que vá à festa, então **todo mundo não** vai (∀¬).
+- Se **não existe alguém**(¬∃) que vá à festa, então **todo mundo não** vai (∀¬).  
+
+Ainda considerando o [exemplo dos animais](#ancora_exemplo-animais), executado na seção anterior, nem todos os animais são felinos, logo, ¬(∀x)F(x). Aplicando as regras de dedução:
+
+- ¬(∀x)F(x)
+- (∃x)¬F(x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(negação do quantificador)
+
+É possível concluir que "existe pelo menos um animal que não é felino". Da mesma forma, não existe um animal que seja primata e tenha asas. Definindo P(x), onde x é um primata, e A(x), onde x tem asas, tem-se ¬(∃x)(P(x) ∧ A(x)). Aplicando as regras de dedução:
+
+- ¬(∃x)(P(x) ∧ A(x))
+- (∀x)¬(P(x) ∧ A(x))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(negação do quantificador)
+- (∀x)(¬P(x) ∨ ¬A(x))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(De Morgan)
+- (∀x)(P(x) → ¬A(x))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Condicional)
+  
+É possível concluir que "para todo animal, se o animal é primata, então não tem asas".
 
 
 ### Generalização e Especialização
