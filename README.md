@@ -17,8 +17,9 @@
   - [Regras](#ancora3-2)
   - [Consultas](#ancora3-3)
   - [Quantificadores e Predicados](#ancora3-4)
-  - [Negação de quantificadores]()
   - [Generalização e Especialização]()
+  - [Negação de quantificadores]()
+
 
 
 <a id="ancora0"></a>
@@ -250,7 +251,12 @@ false
 ```
 Como demonstrado nas duas primeiras consultas, somente alguns elementos do conjunto universo participam da relação. Na terceira consulta, o sistema retorna *false*, dado que não foi definido nenhum primata que tenha asas.  
 
-Você pode alterar o banco de dados acima e adicionar mais animais, características e regras, faça mais consultas para exercitar a compreensão dos quantificadores.
+Você pode alterar o banco de dados acima e adicionar mais animais, características e regras, faça mais consultas para exercitar a compreensão dos quantificadores.  
+
+  
+<a id="ancora3-5"></a>
+### Generalização e Especialização
+Prolog não possui sintaxe para representar quantificadores. Ainda assim, é possível
   
 ### Referências
 <a id="ref_gersting"></a> 1: GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações** - 7. ed. Rio de Janeiro: LTC, 2017.  
