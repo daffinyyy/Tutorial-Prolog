@@ -183,7 +183,7 @@ Agora que há uma base da sintaxe de Prolog, esta seção irá se aprofundar na 
   
 A lógica de predicados possui apenas dois quantificadores, ∀(leia "Para todo") e ∃(leia "Existe"). O ∀ é um quantificador universal, logo, se aplica a todos os itens de um conjunto universo. No exemplo:
 
-> Gersting<sup>[[1]](#ref_gersting)</sup>, Seção 1.3 - PROBLEMA PRÁTICO 15, letra C
+> Gersting<sup>[[1]](#ref_gersting)</sup>, Seção 1.3 - PROBLEMA PRÁTICO 15, letra C  
 > U (Conjunto Universo): Flores  
 > P(x): x é uma planta  
 >  
