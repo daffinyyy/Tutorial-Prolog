@@ -133,7 +133,7 @@ neto(X, Z) :- pai(Z, Y), filho(X, Y).
 A consulta *?-neto(X, ricardo)* representa quem são os netos de ricardo. O sistema deve responder "maria" e "juliano", sempre seguindo a ordem em que foram escritos no banco de dados. Independente se estiver usando o site SWISH ou a interface SWI Prolog, o ?- já é adicionado automaticamente, então não é necessário escrevê-lo.  
   
 **Tente fazer os seguintes exercícios, utilizando o que aprendeu até agora**  
-1. Gersting<sup>[[1]](#ref_gersting)</sup>, Problema prático 28  
+1. Gersting<sup>[[1]](#ref_gersting)</sup>, Seção 1.5 - PROBLEMA PRÁTICO 28  
    Dado o Banco de Dados:
 ```
 come(urso, peixe).
@@ -148,7 +148,7 @@ planta(grama).
 Diga qual vai ser a resposta do sistema à consulta *?-come(X, Y), planta(Y)*  
 
   
-2. Gersting<sup>[[1]](#ref_gersting)</sup>, Problema prático 29  
+2. Gersting<sup>[[1]](#ref_gersting)</sup>, Seção 1.5 - PROBLEMA PRÁTICO 29  
    Dado o banco de dados:
 ```
 come(urso, peixe).
