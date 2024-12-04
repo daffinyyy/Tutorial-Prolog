@@ -1,4 +1,4 @@
-# Tutorial de Prolog
+# Programação Lógica para Lógica de Predicados
 - Explicar método de resolução do prolog?
 - Horn antes dos fatos e regras, três tipos de cláusulas de horn
 - Não existe quantificadores em prolog
