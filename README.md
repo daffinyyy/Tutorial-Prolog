@@ -107,11 +107,11 @@ Note que Prolog não tem semântica intrínseca, logo, o significado dos fatos d
 ### Regras  
 Sendo um condicional, as regras são compostas por um antecedente, que pode ser um termo simples ou uma conjunção, e caso este seja verdadeiro, gera um consequente, que é um termo simples. Para entender as regras em Prolog, é necessário saber também os operadores usados:  
 | SÍMBOLO |   CONECTIVO  | OPERAÇÃO LÓGICA |
-| :---:   |    :----:    |     :---:    |
-| :-      | if (se)      | implicação   |
-| ,       | and (e)      | conjunção    |
-| ;       | or (ou)      | disjunção    |
-| \+      | not (não)    | negação      |  
+| :---:   |    :----:    |      :---:      |
+| :-      | if (se)      |    implicação   |
+| ,       | and (e)      |    conjunção    |
+| ;       | or (ou)      |    disjunção    |
+| \\+     | not (não)    |     negação     |  
   
 Em Prolog, o consequente é escrito primeiro e, em seguida, é atribuida uma condição a ele, seguindo a estrutura ***consequente* :- *expressão antecedente.***, como em:
 - presa(X) :- come(Y,X), animal(X).
