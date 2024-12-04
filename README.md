@@ -211,13 +211,12 @@ X = girassol
 Exatamente todos os elementos do nosso conjunto universo.  
 
 O quantificador ∃ é existencial, se aplicando há *alguns* elementos do conjunto universo. O mesmo pode ser lido como “existe”, “há pelo menos um”, “existe algum” ou “para algum”, use o que for mais conveniente para você. O quantificador existencial implica que não se sabe a quantidade exata, mas que **existe pelo menos um** elemento que se encaixa na relação. Observe o exemplo: 
-<a id="ancora_exemplo-animais"></a>
 
 > U (conjunto Universo): Animais  
 > F(x): x é um felino  
 >  
-> (∃x)F(x)
-
+> (∃x)F(x)  
+<a id="ancora_exemplo-animais"></a>  
 Considerando um conjunto universo de animais, e sabendo que F(x) implica que x é um felino, o predicado (∃x)F(x) pode ser lido como *Existe pelo menos um x (pertencente ao conjunto universo) onde x é um felino*. Aplicando em Prolog, considere o seguinte banco de dados:
 ```
 animal(macaco).
