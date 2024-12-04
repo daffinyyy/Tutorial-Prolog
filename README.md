@@ -16,6 +16,9 @@
   - [Fatos](#ancora3-1)
   - [Regras](#ancora3-2)
   - [Consultas](#ancora3-3)
+  - [Quantificadores e Predicados](#ancora3-4)
+  - [Negação de quantificadores]()
+  - [Generalização e Especialização]()
 
 
 <a id="ancora0"></a>
@@ -174,11 +177,13 @@ presa(X) :- come(Y, X), animal(X).
 &nbsp;&nbsp;a) Formule uma regra de Prolog que define o predicado predador.  
 &nbsp;&nbsp;b) Adicione essa regra ao banco de dados e diga qual seria a resposta à consulta *?- predador(X)*.  
 
+<a id="ancora3-4"></a>
 ### Quantificadores e Predicados
 Agora que há uma base da sintaxe de Prolog, esta seção irá se aprofundar na utilização da linguagem para compreensão da lógica de predicados.  
   
 A lógica de predicados possui apenas dois quantificadores, ∀(leia "Para todo") e ∃(leia "Existe"). O ∀ é um quantificador universal, logo, se aplica a todos os itens de um conjunto universo. No exemplo:
 
+> Gersting<sup>[[1]](#ref_gersting)</sup>, Seção 1.3 - PROBLEMA PRÁTICO 15, letra C
 > U (Conjunto Universo): Flores  
 > P(x): x é uma planta  
 >  
@@ -202,7 +207,50 @@ X = lirio
 X = tulipa
 X = girassol
 ```
-Exatamente todos os elementos do nosso conjunto universo.
+Exatamente todos os elementos do nosso conjunto universo.  
+
+O quantificador ∃ é existencial, se aplicando há *alguns* elementos do conjunto universo. O mesmo pode ser lido como “existe”, “há pelo menos um”, “existe algum” ou “para algum”, use o que for mais conveniente para você. O quantificador existencial implica que não se sabe a quantidade exata, mas que **existe pelo menos um** elemento que se encaixa na relação. Observe o exemplo:  
+
+> U (conjunto Universo): Animais  
+> F(x): x é um felino  
+>  
+> (∃x)F(x)
+
+Considerando um conjunto universo de animais, e sabendo que F(x) implica que x é um felino, o predicado (∃x)F(x) pode ser lido como *Existe pelo menos um x (pertencente ao conjunto universo) onde x é um felino*. Aplicando em Prolog, considere o seguinte banco de dados:
+```
+animal(macaco).
+animal(tigre).
+animal(coruja).
+animal(gato).
+animal(cachorro).
+animal(rato).
+  
+felino(tigre).
+felino(gato).
+primata(macaco).
+roedor(rato).
+canino(cachorro).
+domestico(gato).
+domestico(cachorro).
+domestico(rato).
+tem_asas(coruja).
+```
+O conjunto de animais é definido e, em seguida, atribuímos características a eles. Agora faça algumas consultas e observe a resposta do sistema:
+```
+?- animal(X), felino(X)            %"existe um x que é animal e felino?"
+X = tigre
+X = gato
+false
+
+?- felino(X), domestico(X)         %"existe um x que é felino e doméstico?"
+X = gato
+
+?- primata(X), tem_asas(X)         %"existe um x que é primata e tem asas?"
+false
+```
+Como demonstrado nas duas primeiras consultas, somente alguns elementos do conjunto universo participam da relação. Na terceira consulta, o sistema retorna *false*, dado que não foi definido nenhum primata que tenha asas.  
+
+Você pode alterar o banco de dados acima e adicionar mais animais, características e regras, faça mais consultas para exercitar a compreensão dos quantificadores.
   
 ### Referências
 <a id="ref_gersting"></a> 1: GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações** - 7. ed. Rio de Janeiro: LTC, 2017.  
