@@ -20,6 +20,8 @@
   - [Quantificadores e Predicados](#ancora3-4)
   - [Negação de quantificadores](#ancora3-5)
   - [Generalização e Particularização](#ancora3-6)
+5. [Exercícios](#ancora4)
+6. [Referências](#ancora5)
 
 
 
@@ -294,8 +296,12 @@ A ideia da generalização é aplicar um quantificador em uma variável ou const
 |    Generalização Universal   |   P(x)   |     (∀x)P(x)    |
 |   Generalização Existencial  |   P(a)   |     (∃x)P(x)    |  
 
+<a id="ancora4"></a>  
+### Exercícios
 
-  
+
+
+<a id="ancora5"></a>  
 ### Referências
 <a id="ref_gersting"></a> 1: GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações** - 7. ed. Rio de Janeiro: LTC, 2017.  
 <a id="ref_sebesta"></a> 2: SEBESTA, Robert W. **Conceitos de linguagens de programação** - 9. ed. Porto Alegre : Bookman, 2011.
