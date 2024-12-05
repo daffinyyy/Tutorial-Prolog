@@ -288,6 +288,7 @@ Prolog não tem uma representação para quantificadores, os mesmos estão impl�
 
 A ideia da generalização é aplicar um quantificador em uma variável ou constante, enquanto da particularização é deduzir uma variável ou constante e retirar o quantificador. Ambas são divididas em Universal e Existencial, para cada quantificador. Relembrando as regras de generalização e particularização:  
 |             REGRA            |  ORIGEM  |     DEDUÇÃO     |
+|             :---:            |  :----:  |      :---:      |
 |  Particularização Universal  | (∀x)P(x) |       P(t)      |
 | Particularização Existencial | (∃x)P(x) |       P(a)      |
 |    Generalização Universal   |   P(x)   |     (∀x)P(x)    |
