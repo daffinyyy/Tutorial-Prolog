@@ -1,9 +1,10 @@
 # Programação Lógica para Lógica de Predicados
-- Explicar método de resolução do prolog?
-- Horn antes dos fatos e regras, três tipos de cláusulas de horn
-- Não existe quantificadores em prolog
-- Negação de quantificadores pode ser demonstrada pela resolução
-- Tradução dos predicados em cláusulas pode demonstar o uso de generalização e particularização
+- cláusulas de horn
+- generalização e particularização
+  
+**Escrito por Aline Daffiny F. gomes**, acadêmica de Sistemas de Informação na Universidade do Estado do Amazonas, entusiasta em Inteligência Artificial, atualmente focada em explorar o campo da Visão Computacional.  
+  
+**Orientado por Elloá B Guedes**, insira descrição aqui
 
 ## Sumário
 1. [Introdução](#ancora0)
