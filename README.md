@@ -3,7 +3,7 @@
 - Horn antes dos fatos e regras, três tipos de cláusulas de horn
 - Não existe quantificadores em prolog
 - Negação de quantificadores pode ser demonstrada pela resolução
-- Tradução dos predicados em cláusulas pode demonstar o uso de generalização e especialização
+- Tradução dos predicados em cláusulas pode demonstar o uso de generalização e particularização
 
 ## Sumário
 1. [Introdução](#ancora0)
@@ -12,13 +12,13 @@
 - [Online](#ancora2-1)
 - [Para Windows](#ancora2-2)
 - [Para Linux Ubuntu](#ancora2-3)
-3. [Programando em Prolog](#ancora3)
+4. [Programando em Prolog](#ancora3)
   - [Fatos](#ancora3-1)
   - [Regras](#ancora3-2)
   - [Consultas](#ancora3-3)
   - [Quantificadores e Predicados](#ancora3-4)
   - [Negação de quantificadores](#ancora3-5)
-  - [Generalização e Especialização]()
+  - [Generalização e Particularização](#ancora3-6)
 
 
 
@@ -189,7 +189,8 @@ A lógica de predicados possui apenas dois quantificadores, ∀(leia "Para todo"
 > P(x): x é uma planta  
 >  
 > (∀x)P(x)
-
+  
+<a id="ancora_exemplo-flores"></a>
 Sabemos que todos os elementos do Conjunto Universo são flores, e que o predicado P(x) significa que x é uma planta, logo, (∀x)P(x) significa *"**Para todo** x (pertencente conjunto universo), x é uma planta"*. Veja em Prolog:
 ```
 flor(rosa).
@@ -256,7 +257,7 @@ Você pode alterar o banco de dados acima e adicionar mais animais, característ
   
 <a id="ancora3-5"></a>
 ### Negação de Quantificadores
-As regras de dedução da lógica proposicional ainda valem para a lógica de predicados, com a adição de Generalização e Especialização, vistos na próxima seção, e uma pequena mudança na negação. A negação de quantificadores funciona diferente da negação de variáveis, veja, a regra afirma que:
+As regras de dedução da lógica proposicional ainda valem para a lógica de predicados, com a adição de Generalização e Particularização, vistos na próxima seção, e uma pequena mudança na negação. A negação de quantificadores funciona diferente da negação de variáveis, veja, a regra afirma que:
 
 - ¬∀ é equivalente a ∃¬
 - ¬∃ é equivalente a ∀¬  
@@ -269,20 +270,29 @@ Você pode tentar ver da seguinte maneira:
 Ainda considerando o [exemplo dos animais](#ancora_exemplo-animais), executado na seção anterior, nem todos os animais são felinos, logo, ¬(∀x)F(x). Aplicando as regras de dedução:
 
 - ¬(∀x)F(x)
-- (∃x)¬F(x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(negação do quantificador)
+- (∃x)¬F(x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Negação do quantificador)
 
 É possível concluir que "existe pelo menos um animal que não é felino". Da mesma forma, não existe um animal que seja primata e tenha asas. Definindo P(x), onde x é um primata, e A(x), onde x tem asas, tem-se ¬(∃x)(P(x) ∧ A(x)). Aplicando as regras de dedução:
 
 - ¬(∃x)(P(x) ∧ A(x))
-- (∀x)¬(P(x) ∧ A(x))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(negação do quantificador)
+- (∀x)¬(P(x) ∧ A(x))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Negação do quantificador)
 - (∀x)(¬P(x) ∨ ¬A(x))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(De Morgan)
 - (∀x)(P(x) → ¬A(x))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Condicional)
   
 É possível concluir que "para todo animal, se o animal é primata, então não tem asas".
 
+<a id="ancora3-6"></a>
+### Generalização e Particularização
+Prolog não tem uma representação para quantificadores, os mesmos estão implícitos na linguagem. Como você viu nos exemplos da seção [Quantificadores e Predicados](#ancora3-4), toda consulta de Prolog usa, implicitamente, o quantificador ∃ para perguntar se determinada regra é válida. Da mesma forma, todas as variáveis são, implicitamente, quantificadas universalmente. Mas então, como traduzir predicados quantificados para sentenças em Prolog, sem perder o valor lógico? Isso é possível utilizando as regras de inferência: generalização e particularização.  
 
-### Generalização e Especialização
-Prolog não tem uma representação para quantificadores, os mesmos estão implícitos na linguagem. Como você viu nos exemplos da seção [Quantificadores e Predicados](#ancora3-4), toda consulta de Prolog usa, implicitamente, o quantificador ∃ para perguntar se determinada regra é válida. Da mesma forma, todas as variáveis são, implicitamente, quantificadas universalmente. Mas então, como traduzir predicados quantificados para sentenças em Prolog, sem perder o valor lógico? Isso é possível utilizando as regras de 
+A ideia da generalização é aplicar um quantificador em uma variável ou constante, enquanto da particularização é deduzir uma variável ou constante e retirar o quantificador. Ambas são divididas em Universal e Existencial, para cada quantificador. Relembrando as regras de generalização e particularização:  
+|             REGRA            |  ORIGEM  |     DEDUÇÃO     |
+|  Particularização Universal  | (∀x)P(x) |       P(t)      |
+| Particularização Existencial | (∃x)P(x) |       P(a)      |
+|    Generalização Universal   |   P(x)   |     (∀x)P(x)    |
+|   Generalização Existencial  |   P(a)   |     (∃x)P(x)    |  
+
+
   
 ### Referências
 <a id="ref_gersting"></a> 1: GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação : matemática discreta e suas aplicações** - 7. ed. Rio de Janeiro: LTC, 2017.  
