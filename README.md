@@ -130,7 +130,7 @@ pai(milton, juliano).
 pai(ricardo, milton).
 pai(leandro, andrea).
 filho(X, Y) :- pai(Y, X).
-neto(X, Z) :- pai(Z, Y), filho(X, Y).
+neto(X, Z) :- filho(X, Y), filho(Y,Z).
 ```
 A consulta *?-neto(X, ricardo)* representa quem são os netos de ricardo. O sistema deve responder "maria" e "juliano", sempre seguindo a ordem em que foram escritos no banco de dados. Independente se estiver usando o site SWISH ou a interface SWI Prolog, o ?- já é adicionado automaticamente, então não é necessário escrevê-lo.  
   
