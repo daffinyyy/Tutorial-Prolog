@@ -1,6 +1,4 @@
 # Programação Lógica para Lógica de Predicados
-- cláusulas de horn
-- generalização e particularização
   
 **Escrito por Aline Daffiny F. gomes**, acadêmica de Sistemas de Informação na Universidade do Estado do Amazonas, entusiasta em Inteligência Artificial, atualmente focada em explorar o campo da Visão Computacional.  
   
