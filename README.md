@@ -4,7 +4,7 @@
   
 **Escrito por Aline Daffiny F. gomes**, acadêmica de Sistemas de Informação na Universidade do Estado do Amazonas, entusiasta em Inteligência Artificial, atualmente focada em explorar o campo da Visão Computacional.  
   
-**Orientado por Elloá B Guedes**, insira descrição aqui
+**Orientado por [Elloá B Guedes](https://github.com/elloa)**
 
 ## Sumário
 1. [Introdução](#ancora0)
